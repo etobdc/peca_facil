@@ -1,6 +1,3 @@
-Blank HTML5 Template for Building Packaged Mobile Web Apps
-==========================================================
-
 Copyright © 2012-2017, Intel Corporation. All rights reserved.
 
 See [LICENSE.md](<LICENSE.md>) for license terms and conditions.
@@ -35,3 +32,7 @@ convert your project into a Cordova project. You can do this by clicking the
 Cordova icon in the *Project Info* section on the **Projects** tab. Or, you
 can create a new Cordova project using a Cordova blank template or a Cordova
 demo or sample app as a starting point.
+
+
+# peca_facil
+App para realizar pedidos
