@@ -1,0 +1,1 @@
+{"version":3,"file":"app.css","sources":["app.style.scss","core/styles/variables.style.scss","core/styles/default.style.scss"],"sourcesContent":["@import 'core/styles/variables.style';\n@import 'core/styles/default.style';\n","/* $primary-color: rgb(193, 33, 39); */\n",""],"names":[],"mappings":"ACAA,uCAAuC"}
