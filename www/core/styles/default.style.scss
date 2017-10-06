@@ -1,0 +1,28 @@
+.titulo_padrao{
+	font-family: roboto;
+	font-weight: 600;
+	color: $quaternary-color;
+}
+.titulo_padrao--primary{
+	color: $primary-color;
+}
+.titulo_padrao--secondary{
+	color: $secondary-color;
+}
+.titulo_padrao--tertiary{
+	color: $tertiary-color;
+}
+.titulo_padrao--cta{
+	color: $cta-color;
+}
+.titulo_padrao--uppercase{
+	text-transform: uppercase;
+}
+.btn--cta{
+	color: #fff!important;
+	background-color: $cta-color!important;
+	text-transform: capitalize;
+}
+.btn--totalWidth{
+	width: 100%;
+}

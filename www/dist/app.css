@@ -1,3 +1,77 @@
-/* $primary-color: rgb(193, 33, 39); */
+.titulo_padrao {
+  font-family: roboto;
+  font-weight: 600;
+  color: #454344; }
+
+.titulo_padrao--primary {
+  color: #e21c2b; }
+
+.titulo_padrao--secondary {
+  color: #ff141b; }
+
+.titulo_padrao--tertiary {
+  color: #ff8202; }
+
+.titulo_padrao--cta {
+  color: #01c501; }
+
+.titulo_padrao--uppercase {
+  text-transform: uppercase; }
+
+.btn--cta {
+  color: #fff !important;
+  background-color: #01c501 !important;
+  text-transform: capitalize; }
+
+.btn--totalWidth {
+  width: 100%; }
+
+.login__logo {
+  padding: 15px 0px; }
+  .login__logo img {
+    width: 135px; }
+
+.login__content__logo {
+  background-color: #fff;
+  height: 11vh; }
+
+.login__content {
+  background-color: #e21c2b;
+  height: 89vh; }
+
+.login__content__tabs {
+  margin-top: 2.5em; }
+  .login__content__tabs md-pagination-wrapper {
+    width: 100%;
+    background: #e21c2b; }
+    .login__content__tabs md-pagination-wrapper md-tab-item {
+      width: 50%;
+      color: #ff8202;
+      font-weight: 800;
+      border-bottom: 1px solid #fff; }
+  .login__content__tabs md-tabs .md-tab.md-active {
+    color: #fff;
+    background: rgba(255, 130, 2, 0.3); }
+  .login__content__tabs md-ink-bar {
+    color: #ff8202;
+    background: #ff8202; }
+  .login__content__tabs md-tabs md-tabs-wrapper {
+    border: none; }
+  .login__content__tabs .login__content__tabs__formPadding {
+    padding: 15px; }
+  .login__content__tabs .login__content__tabs--background {
+    background: #e21c2b; }
+  .login__content__tabs form {
+    color: #ff8202;
+    font-size: 18px; }
+    .login__content__tabs form md-input-container label {
+      color: #ff8202 !important; }
+    .login__content__tabs form md-input-container input {
+      color: #fff;
+      border-color: #ff8202 !important; }
+  .login__content__tabs .login__content__form__btn {
+    margin: 0px;
+    font-size: 18px;
+    height: 3em; }
 
 /*# sourceMappingURL=app.css.map */
