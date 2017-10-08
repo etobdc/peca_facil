@@ -34,24 +34,53 @@
 .login__content__logo {
   background-color: #fff;
   height: 11vh; }
+  @media screen and (max-height: 512px) {
+    .login__content__logo {
+      height: 11vh; } }
+  @media screen and (max-height: 445px) {
+    .login__content__logo {
+      height: 15vh; } }
+  @media screen and (max-height: 370px) {
+    .login__content__logo {
+      height: 18vh; } }
+  @media screen and (max-height: 370px) {
+    .login__content__logo {
+      height: 21vh; } }
+  @media screen and (max-height: 275px) {
+    .login__content__logo {
+      height: 24vh; } }
+  @media screen and (max-height: 235px) {
+    .login__content__logo {
+      height: 27vh; } }
+  @media screen and (max-height: 210px) {
+    .login__content__logo {
+      height: 30vh; } }
 
 .login__content {
-  background-color: #e21c2b;
-  height: 89vh; }
+  background-image: url("../media/back2.jpg");
+  height: 89vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; }
+
+.login__content__background {
+  width: 100%;
+  height: 89vh;
+  position: absolute;
+  background: rgba(226, 28, 43, 0.8); }
 
 .login__content__tabs {
-  margin-top: 2.5em; }
+  margin-top: 2.5em;
+  background: transparent; }
   .login__content__tabs md-pagination-wrapper {
-    width: 100%;
-    background: #e21c2b; }
+    width: 100%; }
     .login__content__tabs md-pagination-wrapper md-tab-item {
       width: 50%;
       color: #ff8202;
       font-weight: 800;
       border-bottom: 1px solid #fff; }
   .login__content__tabs md-tabs .md-tab.md-active {
-    color: #fff;
-    background: rgba(255, 130, 2, 0.3); }
+    color: #fff; }
   .login__content__tabs md-ink-bar {
     color: #ff8202;
     background: #ff8202; }
@@ -60,7 +89,7 @@
   .login__content__tabs .login__content__tabs__formPadding {
     padding: 15px; }
   .login__content__tabs .login__content__tabs--background {
-    background: #e21c2b; }
+    background: transparent; }
   .login__content__tabs form {
     color: #ff8202;
     font-size: 18px; }

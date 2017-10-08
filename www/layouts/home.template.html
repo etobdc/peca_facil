@@ -1,10 +1,11 @@
 <div class="login__content">
 	<div layout="row" layout-align="center center" class="login__content__logo">
 		<div class="login__logo">
-	  		<img src="media/logo.jpg">		
+	  		<img src="media/logo_small.png">		
 		</div>
 	</div>
 	<div layout="row" layout-align="center start" class="login__content">
+		<span class="login__content__background"></span>
 		<md-content class="flex-90 login__content__tabs" >
 			<md-tabs md-dynamic-height md-border-bottom md-colors="{background: '#e21c2b'}">
 				<md-tab label="Login">
@@ -13,7 +14,7 @@
 							<div layou="row">
 								<md-input-container class="md-block" flex>
 									<label>Login</label>
-									<input ng-model="data.login">
+									<input ng-model="data.login" type="email">
 								</md-input-container>
 
 								<md-input-container class="md-block" flex>
@@ -27,17 +28,34 @@
 				</md-tab>
 				<md-tab label="Cadastro">
 					<md-content class="login__content__tabs__formPadding login__content__tabs--background">
-						<form name="projectForm" ng-model="data">
+						<form name="projectForm" ng-model="dados">
 							<div layou="row">
 								<md-input-container class="md-block" flex>
-									<label>Login</label>
+									<label>Nome completo</label>
+									<input ng-model="data.nome">
+								</md-input-container>
+								<md-input-container class="md-block" flex>
+									<label>Estado</label>
 									<input ng-model="data.login">
 								</md-input-container>
-
+								<md-input-container class="md-block" flex>
+									<label>Cidade</label>
+									<input ng-model="data.login">
+								</md-input-container>
+								<md-input-container class="md-block" flex>
+									<label>E-mail - Será seu Login</label>
+									<input ng-model="data.login">
+								</md-input-container>
 								<md-input-container class="md-block" flex>
 									<label>Senha</label>
 									<input ng-model="data.senha" type="password">
 								</md-input-container>
+								<md-input-container class="md-block" flex>
+									<label>Confirmar senha</label>
+									<input ng-model="data.senha2" type="password">
+								</md-input-container>
+								<md-button class="md-raised btn--cta btn--totalWidth login__content__form__btn ">Entrar</md-button>
+								
 							</div>
 						</form>
 					</md-content>
