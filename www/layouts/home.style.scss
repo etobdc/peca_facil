@@ -35,12 +35,114 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    @media screen and (max-height: 555px) {
+        height: 95vh;
+    }
+    @media screen and (max-height: 515px) {
+        height: 100vh;
+    }
+    @media screen and (max-height: 490px) {
+        height: 105vh;
+    }
+    @media screen and (max-height: 470px) {
+        height: 115vh;
+    }
+    @media screen and (max-height: 430px) {
+        height: 125vh;
+    }
+    @media screen and (max-height: 395px) {
+        height: 135vh;
+    }
+    @media screen and (max-height: 365px) {
+        height: 145vh;
+    }
+    @media screen and (max-height: 340px) {
+        height: 155vh;
+    }
+    @media screen and (max-height: 315px) {
+        height: 165vh;
+    }
+    @media screen and (max-height: 300px) {
+        height: 175vh;
+    }
+    @media screen and (max-height: 300px) {
+        height: 190vh;
+    }
+    @media screen and (max-height: 260px) {
+        height: 210vh;
+    }
+    @media screen and (max-height: 235px) {
+        height: 225vh;
+    }
+    @media screen and (max-height: 220px) {
+        height: 250vh;
+    }
+    @media screen and (max-height: 200px) {
+        height: 275vh;
+    }
+    @media screen and (max-height: 180px) {
+        height: 300vh;
+    }
+    @media screen and (max-height: 160px) {
+        height: 325vh;
+    }
 }
 .login__content__background{
     width: 100%;
     height: 89vh;
     position: absolute;
     background: rgba($primary-color, 0.8);
+    @media screen and (max-height: 555px) {
+        height: 95vh;
+    }
+    @media screen and (max-height: 515px) {
+        height: 100vh;
+    }
+    @media screen and (max-height: 490px) {
+        height: 105vh;
+    }
+    @media screen and (max-height: 470px) {
+        height: 115vh;
+    }
+    @media screen and (max-height: 430px) {
+        height: 125vh;
+    }
+    @media screen and (max-height: 395px) {
+        height: 135vh;
+    }
+    @media screen and (max-height: 365px) {
+        height: 145vh;
+    }
+    @media screen and (max-height: 340px) {
+        height: 155vh;
+    }
+    @media screen and (max-height: 315px) {
+        height: 165vh;
+    }
+    @media screen and (max-height: 300px) {
+        height: 175vh;
+    }
+    @media screen and (max-height: 300px) {
+        height: 190vh;
+    }
+    @media screen and (max-height: 260px) {
+        height: 210vh;
+    }
+    @media screen and (max-height: 235px) {
+        height: 225vh;
+    }
+    @media screen and (max-height: 220px) {
+        height: 250vh;
+    }
+    @media screen and (max-height: 200px) {
+        height: 275vh;
+    }
+    @media screen and (max-height: 180px) {
+        height: 300vh;
+    }
+    @media screen and (max-height: 160px) {
+        height: 325vh;
+    }
 }
 .login__content__tabs{
     margin-top: 2.5em;
