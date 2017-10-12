@@ -23,7 +23,7 @@
 			.state('main', {
 				templateUrl: 'structure/main.template.html',
 				controller: 'MainController',
-				controllerAs: 'MainVm',
+				controllerAs: 'vm',
 			})
 			.state('home', {
 				url: '/',
@@ -38,6 +38,84 @@
 
 })();
 
+(function() {
+	'use strict';
+		angular
+			.module('app')
+			.constant('config', {
+				url: 'http://192.168.0.103/api/'
+			});
+})(); 
+(function() {
+    'use strict';
+    
+    angular
+        .module('app')
+        .factory('API', API);
+    
+    function API($http, config){
+        var cache = {};
+
+        var factory = {
+            get: _get,
+            post: _post,
+            put: _put,
+            delete: _delete,
+            cacheDestroy: _cacheDestroy,
+            addCache: _addCache
+        }
+        
+        function _get(url, param) {
+            if(!_getCacheItem(url, param)){
+                if (param != undefined) {
+                    _setCacheItem(url, param, $http.get(config.url  + url + '/' + param));
+                }else{
+                    _setCacheItem(url, param, $http.get(config.url  + url));
+                }                
+            }
+            return _getCacheItem(url, param);
+        };
+
+        function _post(url, params) {
+            return $http.post(config.url + url, params);
+        };
+        function _put(url, params) {
+            return $http.put(config.url + url, params);
+        };
+        function _delete(url, params) {
+            return $http.delete(config.url + url, params);
+        };
+
+        function _cacheDestroy(){
+            cache = {};
+        }
+
+        function _addCache(key, value){
+            cache[key] = value;
+        }
+
+        /* Privates */
+
+        function _getCacheItem(url, param){
+            return cache[_urlToKey(url, param)];
+        }
+
+        function _setCacheItem(url, param, item){
+            cache[_urlToKey(url, param)] = item;
+        }
+
+        function _urlToKey(url, param){
+            var key = '?t=' + url;
+            if(param){
+                key += '&p=' + param;
+            }
+            return key;
+        }
+
+        return factory;
+    }
+
+})();
 /*
  * Please see the included README.md file for license terms and conditions.
  */
@@ -96,8 +174,24 @@ document.addEventListener("deviceready", onAppReady, false) ;
     .module('app')
     .controller('HomeController', HomeController);
 
-  function HomeController(){
+  function HomeController(API){
     let vm = this;
+    vm.logar = logar;
+
+
+    function logar(data){
+    	console.log(data);
+    }
+
+    vm.$onInit = () => {
+        getFromAPI();
+    }
+
+    function getFromAPI() {
+      API.get('teste').then(result => {
+        vm.apiStatus = result.data;
+      });
+    }
   }
 
 })();

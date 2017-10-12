@@ -7,21 +7,22 @@
 	<div layout="row" layout-align="center start" class="login__content">
 		<span class="login__content__background"></span>
 		<md-content class="flex-90 login__content__tabs" >
-			<md-tabs md-dynamic-height md-border-bottom md-colors="{background: '#e21c2b'}">
+			<md-tabs md-dynamic-height md-border-bottom>
 				<md-tab label="Login">
 					<md-content class="login__content__tabs__formPadding login__content__tabs--background">
-						<form name="projectForm" ng-model="data">
+						<form name="projectForm" ng-model="data" ng-submit="vm.logar(data)">
 							<div layou="row">
+								<div align="center">{{vm.apiStatus}}</div>
 								<md-input-container class="md-block" flex>
 									<label>Login</label>
-									<input ng-model="data.login" type="email">
+									<input ng-model="data.login" type="email" required="">
 								</md-input-container>
 
 								<md-input-container class="md-block" flex>
 									<label>Senha</label>
-									<input ng-model="data.senha" type="password">
+									<input ng-model="data.senha" type="password" required="">
 								</md-input-container>
-								<md-button class="md-raised btn--cta btn--totalWidth login__content__form__btn ">Entrar</md-button>
+								<md-button class="md-raised btn--cta btn--totalWidth login__content__form__btn" type="submit">Entrar</md-button>
 							</div>
 						</form>
 					</md-content>

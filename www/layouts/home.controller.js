@@ -5,8 +5,24 @@
     .module('app')
     .controller('HomeController', HomeController);
 
-  function HomeController(){
+  function HomeController(API){
     let vm = this;
+    vm.logar = logar;
+
+
+    function logar(data){
+    	console.log(data);
+    }
+
+    vm.$onInit = () => {
+        getFromAPI();
+    }
+
+    function getFromAPI() {
+      API.get('teste').then(result => {
+        vm.apiStatus = result.data;
+      });
+    }
   }
 
 })();

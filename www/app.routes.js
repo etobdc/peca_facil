@@ -12,7 +12,7 @@
 			.state('main', {
 				templateUrl: 'structure/main.template.html',
 				controller: 'MainController',
-				controllerAs: 'MainVm',
+				controllerAs: 'vm',
 			})
 			.state('home', {
 				url: '/',
