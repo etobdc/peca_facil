@@ -188,6 +188,7 @@ document.addEventListener("deviceready", onAppReady, false) ;
     }
 
     function getFromAPI() {
+      vm.domain = document.domain;
       API.get('teste').then(result => {
         vm.apiStatus = result.data;
       });

@@ -12,7 +12,12 @@
 					<md-content class="login__content__tabs__formPadding login__content__tabs--background">
 						<form name="projectForm" ng-model="data" ng-submit="vm.logar(data)">
 							<div layou="row">
-								<div align="center">{{vm.apiStatus}}</div>
+								<div align="center" ng-show="vm.apiStatus">{{vm.apiStatus}}</div>
+								<div align="center" ng-hide="vm.apiStatus">
+									API OFF
+									<br>
+									{{vm.domain}}
+								</div>
 								<md-input-container class="md-block" flex>
 									<label>Login</label>
 									<input ng-model="data.login" type="email" required="">
