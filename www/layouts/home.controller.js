@@ -7,8 +7,10 @@
 
   function HomeController(API){
     let vm = this;
-    vm.logar = logar;
+    vm.btnLoginTexto = "Cadastrar";
 
+    vm.logar = logar;
+    vm.cadastroUser = cadastroUser;
 
     function logar(data){
     	console.log(data);
@@ -20,8 +22,16 @@
 
     function getFromAPI() {
       vm.domain = document.domain;
-      API.get('teste').then(result => {
+      API.get('usuarios').then(result => {
         vm.apiStatus = result.data;
+      });
+    }
+
+    function cadastroUser(dados){
+      vm.btnLogin = 1;
+      vm.btnLoginTexto = "Cadastrando";
+      API.post('usuarios',dados).then(result => {
+        console.log(result.data);
       });
     }
   }

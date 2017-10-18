@@ -22,6 +22,16 @@
 	color: #fff!important;
 	background-color: $cta-color!important;
 	text-transform: capitalize;
+	&:disabled{
+		background-color: rgba($cta-color, 0.65)!important;	
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	    img{
+	    	max-height: 100%;
+	    	max-width: 2em;
+	    }
+	}
 }
 .btn--totalWidth{
 	width: 100%;

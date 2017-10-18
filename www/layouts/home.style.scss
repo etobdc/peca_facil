@@ -194,5 +194,8 @@
     	margin: 0px;
     	font-size: 18px;
 	    height: 3em;
+        button:disabled{
+            background-color: $cta-color - 100;
+        }
     }
 }

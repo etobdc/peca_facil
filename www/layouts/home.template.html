@@ -12,7 +12,6 @@
 					<md-content class="login__content__tabs__formPadding login__content__tabs--background">
 						<form name="projectForm" ng-model="data" ng-submit="vm.logar(data)">
 							<div layou="row">
-								<div align="center" ng-show="vm.apiStatus">{{vm.apiStatus}}</div>
 								<div align="center" ng-hide="vm.apiStatus">
 									API OFF
 									<br>
@@ -34,25 +33,28 @@
 				</md-tab>
 				<md-tab label="Cadastro">
 					<md-content class="login__content__tabs__formPadding login__content__tabs--background">
-						<form name="projectForm" ng-model="dados">
+						<form name="projectForm" ng-model="dados" ng-submit="vm.cadastroUser(dados)" ng-init="vm.btnLogin = 0">
 							<div layou="row">
 								<md-input-container class="md-block" flex>
 									<label>Nome completo</label>
-									<input ng-model="dados.nome">
+									<input ng-model="dados.nome" required="">
 								</md-input-container>
 								<md-input-container class="md-block" flex>
 									<label>CEP</label>
-									<input ng-model="dados.cep">
+									<input ng-model="dados.cep" required="">
 								</md-input-container>
 								<md-input-container class="md-block" flex>
 									<label>E-mail - Será seu Login</label>
-									<input ng-model="dados.login">
+									<input ng-model="dados.email" type="email" required="">
 								</md-input-container>
 								<md-input-container class="md-block" flex>
 									<label>Senha</label>
-									<input ng-model="dados.senha" type="password">
+									<input ng-model="dados.senha" type="password" required="">
 								</md-input-container>
-								<md-button class="md-raised btn--cta btn--totalWidth login__content__form__btn ">Cadastrar</md-button>
+								<md-button ng-disabled="vm.btnLogin" class="md-raised btn--cta btn--totalWidth login__content__form__btn" type="submit">
+									{{vm.btnLoginTexto}}
+									<img src="media/loadDots.svg" ng-show="vm.btnLogin">
+								</md-button>
 							</div>
 						</form>
 					</md-content>

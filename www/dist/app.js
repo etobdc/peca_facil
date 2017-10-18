@@ -43,7 +43,7 @@
 		angular
 			.module('app')
 			.constant('config', {
-				url: 'http://192.168.0.103/api/'
+				url: 'http://10.0.9.229/apil/public/api/'
 			});
 })(); 
 (function() {
@@ -176,8 +176,10 @@ document.addEventListener("deviceready", onAppReady, false) ;
 
   function HomeController(API){
     let vm = this;
-    vm.logar = logar;
+    vm.btnLoginTexto = "Cadastrar";
 
+    vm.logar = logar;
+    vm.cadastroUser = cadastroUser;
 
     function logar(data){
     	console.log(data);
@@ -189,8 +191,16 @@ document.addEventListener("deviceready", onAppReady, false) ;
 
     function getFromAPI() {
       vm.domain = document.domain;
-      API.get('teste').then(result => {
+      API.get('usuarios').then(result => {
         vm.apiStatus = result.data;
+      });
+    }
+
+    function cadastroUser(dados){
+      vm.btnLogin = 1;
+      vm.btnLoginTexto = "Cadastrando";
+      API.post('usuarios',dados).then(result => {
+        console.log(result.data);
       });
     }
   }

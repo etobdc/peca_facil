@@ -3,6 +3,6 @@
 		angular
 			.module('app')
 			.constant('config', {
-				url: 'http://192.168.0.103/api/'
+				url: 'http://10.0.9.229/apil/public/api/'
 			});
 })(); 
