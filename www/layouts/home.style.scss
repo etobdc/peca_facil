@@ -1,12 +1,12 @@
 .login__logo{
-	padding: 15px 0px;
-	img{
-		width: 135px;
-	}
+    padding: 15px 0px;
+    img{
+        width: 135px;
+    }
 }
 .login__content__logo{
-	background-color: #fff;
-	height: 11vh;
+    background-color: #fff;
+    height: 11vh;
     @media screen and (max-height: 512px) {
         height: 11vh;
     }
@@ -30,8 +30,8 @@
     }
 }
 .login__content{
-	background-image: url('../media/back2.jpg');
-	height: 89vh;
+    background-image: url('../media/back2.jpg');
+    height: 89vh;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -148,54 +148,65 @@
     margin-top: 2.5em;
     background: transparent;
     md-pagination-wrapper{
-    	width: 100%;  	
-    	md-tab-item{
-	    	width: 50%;
-	    	color: $tertiary-color;
-	    	font-weight: 800;
-	    	border-bottom: 1px solid #fff;
-	    }
+        width: 100%;    
+        md-tab-item{
+            width: 50%;
+            color: $tertiary-color;
+            font-weight: 800;
+            border-bottom: 1px solid #fff;
+        }
     }  
     md-tabs{
-    	.md-tab.md-active {    		
-	    	color: #fff;
-    		//background: rgba($tertiary-color,0.3);
-    	}
+        .md-tab.md-active {         
+            color: #fff;
+            //background: rgba($tertiary-color,0.3);
+        }
     } 
     md-ink-bar{
-	    color: $tertiary-color;
-    	background: $tertiary-color;
+        color: $tertiary-color;
+        background: $tertiary-color;
     }
     md-tabs{
-	    md-tabs-wrapper{
-	    	border: none;
-	    }    	
+        md-tabs-wrapper{
+            border: none;
+        }       
     }
     .login__content__tabs__formPadding{
-    	padding: 15px;
+        padding: 15px;
     }
     .login__content__tabs--background{
-    	background: transparent;
+        background: transparent;
     }
     form{
-    	color: $tertiary-color;
-    	font-size: 18px;
-    	md-input-container{
-    		label{
-    			color: $tertiary-color!important;
-    		}
-    		input{
-    			color: #fff;
-    			border-color:$tertiary-color!important;
-    		}
-    	}
+        color: $tertiary-color;
+        font-size: 18px;
+        md-input-container{
+            label{
+                color: $tertiary-color!important;
+            }
+            input{
+                color: #fff;
+                border-color:$tertiary-color!important;
+            }
+        }
     }
     .login__content__form__btn{
-    	margin: 0px;
-    	font-size: 18px;
-	    height: 3em;
+        margin: 0px;
+        font-size: 18px;
+        height: 3em;
         button:disabled{
             background-color: $cta-color - 100;
         }
     }
+}
+.md-input-message-animation{
+    color: #fff!important;
+}
+.md-toast.md-default-theme .md-toast-content, md-toast .md-toast-content {
+    background-color: #fff!important;
+    color: $tertiary-color!important;
+    border: 1px solid $tertiary-color;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
 }

@@ -174,7 +174,7 @@ document.addEventListener("deviceready", onAppReady, false) ;
     .module('app')
     .controller('HomeController', HomeController);
 
-  function HomeController(API){
+  function HomeController(API,$mdToast){
     let vm = this;
     vm.btnLoginTexto = "Entrar";
     vm.btnCadastroTexto = "Cadastrar";
@@ -182,6 +182,18 @@ document.addEventListener("deviceready", onAppReady, false) ;
     vm.btnCadastro = 0;
     vm.logar = logar;
     vm.cadastroUser = cadastroUser;
+
+
+    vm.showSimpleToast = function(msg) {
+      $mdToast.show(
+          $mdToast.simple()
+          .textContent(msg)
+          .position('top right')
+          .hideDelay(10000)
+      );
+    };
+
+
 
     function logar(dados){
       vm.btnLogin = 1;
@@ -201,13 +213,19 @@ document.addEventListener("deviceready", onAppReady, false) ;
     function cadastroUser(dados){
       vm.btnCadastro = 1;
       vm.btnCadastroTexto = "Cadastrando";
-      
+
       API.post('register',dados).then(result => {
         console.log(result.data);
       }).catch(error =>{
         vm.btnCadastro = 0;
         vm.btnCadastroTexto = "Cadastrar";
-        console.log(error);
+        console.log(error.data);
+        if(error.data.password != undefined){
+          vm.showSimpleToast('Senha de no minimo 6 caracteres');
+        }
+        if(error.data.email != undefined){
+          vm.showSimpleToast('E-mail inválido');
+        }
       });
     }
   }

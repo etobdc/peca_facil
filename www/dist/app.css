@@ -215,4 +215,15 @@
     .login__content__tabs .login__content__form__btn button:disabled {
       background-color: #006100; }
 
+.md-input-message-animation {
+  color: #fff !important; }
+
+.md-toast.md-default-theme .md-toast-content, md-toast .md-toast-content {
+  background-color: #fff !important;
+  color: #ff8202 !important;
+  border: 1px solid #ff8202;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center; }
+
 /*# sourceMappingURL=app.css.map */

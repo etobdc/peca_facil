@@ -19,12 +19,12 @@
 								</div>
 								<md-input-container class="md-block" flex>
 									<label>Login</label>
-									<input ng-model="data.email" type="email" required="" name="ex'x'">
+									<input ng-model="data.email" type="email" required="" name="email" md-no-asterisk>
 								</md-input-container>
 
 								<md-input-container class="md-block" flex>
 									<label>Senha</label>
-									<input ng-model="data.password" type="password" required="">
+									<input ng-model="data.password" type="password" required="" md-no-asterisk>
 								</md-input-container>
 								<md-button ng-disabled="vm.btnLogin" class="md-raised btn--cta btn--totalWidth login__content__form__btn" type="submit">
 									{{vm.btnLoginTexto}}
@@ -40,15 +40,18 @@
 							<div layou="row">
 								<md-input-container class="md-block" flex>
 									<label>Nome completo</label>
-									<input ng-model="dados.name" required="">
+									<input ng-model="dados.name" required="" md-no-asterisk>
 								</md-input-container>
 								<md-input-container class="md-block" flex>
 									<label>E-mail - Será seu Login</label>
-									<input ng-model="dados.email" type="email" required="">
+									<input ng-model="dados.email" type="email" required="" md-no-asterisk>
 								</md-input-container>
 								<md-input-container class="md-block" flex>
 									<label>Senha</label>
-									<input ng-model="dados.password" type="password" required="">
+									<input md-minlength="6" md-no-asterisk ng-model="dados.password" type="password" required="">
+									<div ng-messages="projectForm.password.$error">
+							          <div ng-message="md-maxlength">Minimo 6 caracteres</div>
+							        </div>
 								</md-input-container>
 								<md-button ng-disabled="vm.btnCadastro" class="md-raised btn--cta btn--totalWidth login__content__form__btn" type="submit">
 									{{vm.btnCadastroTexto}}
