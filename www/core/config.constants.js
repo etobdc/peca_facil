@@ -3,6 +3,6 @@
 		angular
 			.module('app')
 			.constant('config', {
-				url: 'http://10.0.9.229/apil/public/api/'
+				url: 'http://localhost/api/public/api/'
 			});
 })(); 

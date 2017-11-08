@@ -19,29 +19,28 @@
 								</div>
 								<md-input-container class="md-block" flex>
 									<label>Login</label>
-									<input ng-model="data.login" type="email" required="">
+									<input ng-model="data.email" type="email" required="" name="ex'x'">
 								</md-input-container>
 
 								<md-input-container class="md-block" flex>
 									<label>Senha</label>
-									<input ng-model="data.senha" type="password" required="">
+									<input ng-model="data.password" type="password" required="">
 								</md-input-container>
-								<md-button class="md-raised btn--cta btn--totalWidth login__content__form__btn" type="submit">Entrar</md-button>
+								<md-button ng-disabled="vm.btnLogin" class="md-raised btn--cta btn--totalWidth login__content__form__btn" type="submit">
+									{{vm.btnLoginTexto}}
+									<img src="media/loadDots.svg" ng-show="vm.btnLogin">
+								</md-button>
 							</div>
 						</form>
 					</md-content>
 				</md-tab>
 				<md-tab label="Cadastro">
 					<md-content class="login__content__tabs__formPadding login__content__tabs--background">
-						<form name="projectForm" ng-model="dados" ng-submit="vm.cadastroUser(dados)" ng-init="vm.btnLogin = 0">
+						<form name="projectForm" ng-model="dados" ng-submit="vm.cadastroUser(dados)">
 							<div layou="row">
 								<md-input-container class="md-block" flex>
 									<label>Nome completo</label>
-									<input ng-model="dados.nome" required="">
-								</md-input-container>
-								<md-input-container class="md-block" flex>
-									<label>CEP</label>
-									<input ng-model="dados.cep" required="">
+									<input ng-model="dados.name" required="">
 								</md-input-container>
 								<md-input-container class="md-block" flex>
 									<label>E-mail - Será seu Login</label>
@@ -49,11 +48,11 @@
 								</md-input-container>
 								<md-input-container class="md-block" flex>
 									<label>Senha</label>
-									<input ng-model="dados.senha" type="password" required="">
+									<input ng-model="dados.password" type="password" required="">
 								</md-input-container>
-								<md-button ng-disabled="vm.btnLogin" class="md-raised btn--cta btn--totalWidth login__content__form__btn" type="submit">
-									{{vm.btnLoginTexto}}
-									<img src="media/loadDots.svg" ng-show="vm.btnLogin">
+								<md-button ng-disabled="vm.btnCadastro" class="md-raised btn--cta btn--totalWidth login__content__form__btn" type="submit">
+									{{vm.btnCadastroTexto}}
+									<img src="media/loadDots.svg" ng-show="vm.btnCadastro">
 								</md-button>
 							</div>
 						</form>
