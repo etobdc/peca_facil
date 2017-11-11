@@ -10,21 +10,16 @@
 			<md-tabs md-dynamic-height md-border-bottom>
 				<md-tab label="Login">
 					<md-content class="login__content__tabs__formPadding login__content__tabs--background">
-						<form name="projectForm" ng-model="data" ng-submit="vm.logar(data)">
+						<form autocomplete="false" name="projectForm" ng-model="data" ng-submit="vm.logar(data)">
 							<div layou="row">
-								<div align="center" ng-hide="vm.apiStatus">
-									API OFF
-									<br>
-									{{vm.domain}}
-								</div>
 								<md-input-container class="md-block" flex>
 									<label>Login</label>
-									<input ng-model="data.email" type="email" required="" name="email" md-no-asterisk>
+									<input autofill="off" autocomplete="false" ng-model="data.email" type="email" required="" name="email" md-no-asterisk>
 								</md-input-container>
 
 								<md-input-container class="md-block" flex>
 									<label>Senha</label>
-									<input ng-model="data.password" type="password" required="" md-no-asterisk>
+									<input autofill="off" autocomplete="false" ng-model="data.password" type="password" required="" md-no-asterisk>
 								</md-input-container>
 								<md-button ng-disabled="vm.btnLogin" class="md-raised btn--cta btn--totalWidth login__content__form__btn" type="submit">
 									{{vm.btnLoginTexto}}
@@ -36,19 +31,19 @@
 				</md-tab>
 				<md-tab label="Cadastro">
 					<md-content class="login__content__tabs__formPadding login__content__tabs--background">
-						<form name="projectForm" ng-model="dados" ng-submit="vm.cadastroUser(dados)">
+						<form autocomplete="false" name="projectForm" ng-model="dados" ng-submit="vm.cadastroUser(dados)">
 							<div layou="row">
 								<md-input-container class="md-block" flex>
 									<label>Nome completo</label>
-									<input ng-model="dados.name" required="" md-no-asterisk>
+									<input autofill="off" autocomplete="false" ng-model="dados.name" required="" md-no-asterisk>
 								</md-input-container>
 								<md-input-container class="md-block" flex>
 									<label>E-mail - Será seu Login</label>
-									<input ng-model="dados.email" type="email" required="" md-no-asterisk>
+									<input autofill="off" autocomplete="false" ng-model="dados.email" type="email" required="" md-no-asterisk>
 								</md-input-container>
 								<md-input-container class="md-block" flex>
 									<label>Senha</label>
-									<input md-minlength="6" md-no-asterisk ng-model="dados.password" type="password" required="">
+									<input autofill="off" autocomplete="false" md-minlength="6" md-no-asterisk ng-model="dados.password" type="password" required="">
 									<div ng-messages="projectForm.password.$error">
 							          <div ng-message="md-maxlength">Minimo 6 caracteres</div>
 							        </div>

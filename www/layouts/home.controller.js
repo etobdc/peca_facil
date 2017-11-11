@@ -29,15 +29,31 @@
     function logar(dados){
       vm.btnLogin = 1;
       vm.btnLoginTexto = "Entrando";
-      API.post('login',dados).then(result => {
-        if (result.data != '') {
-          vm.apiStatus = true;
-        }        
+      API.post('login',dados).then(result => {              
         console.log(result.data);
+        vm.btnLogin = 0;
+        vm.btnLoginTexto = "Entrar";
+        if(result.data.password != undefined){
+          vm.showSimpleToast('Senha de no minimo 6 caracteres');
+        }
+        if(result.data.email != undefined){
+          vm.showSimpleToast('E-mail inválido');
+        }
+        if(!result.data){
+          vm.showSimpleToast('Usuário não encontrado');
+        }
       }).catch(error =>{
         vm.btnLogin = 0;
-         vm.btnLoginTexto = "Entrar";
-        console.log(error);
+        vm.btnLoginTexto = "Entrar";
+        if(error.data.password != undefined){
+          vm.showSimpleToast('Senha de no minimo 6 caracteres');
+        }
+        if(error.data.email != undefined){
+          vm.showSimpleToast('E-mail inválido');
+        }
+        if(error.data == ''){
+          vm.showSimpleToast('Usuário não encontrado');
+        }
       });
     }
 
@@ -50,7 +66,6 @@
       }).catch(error =>{
         vm.btnCadastro = 0;
         vm.btnCadastroTexto = "Cadastrar";
-        console.log(error.data);
         if(error.data.password != undefined){
           vm.showSimpleToast('Senha de no minimo 6 caracteres');
         }
