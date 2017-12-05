@@ -4,10 +4,10 @@
 	  		<img src="media/logo_small.png">		
 		</div>
 	</div>
-	<div layout="row" layout-align="center start" class="login__content">
+	<div layout="row" layout-align="center start" class="login__content" md-swipe-right="vm.onSwipeRight()" md-swipe-left="vm.onSwipeLeft()">
 		<span class="login__content__background"></span>
-		<md-content class="flex-90 login__content__tabs" >
-			<md-tabs md-dynamic-height md-border-bottom>
+		<md-content class="flex-90 login__content__tabs">
+			<md-tabs md-dynamic-height md-border-bottom md-selected="vm.selectedIndex">
 				<md-tab label="Login">
 					<md-content class="login__content__tabs__formPadding login__content__tabs--background">
 						<form autocomplete="false" name="projectForm" ng-model="data" ng-submit="vm.logar(data)">

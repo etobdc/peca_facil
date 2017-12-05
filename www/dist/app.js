@@ -4,8 +4,19 @@
 	angular
 	.module('app', [
 		'ngMaterial',
-		'ui.router'
+		'ui.router',
+		'app.pedido'
 	])
+
+})();
+
+(function(){
+  'use strict';
+
+  angular
+    .module('app.pedido', [
+
+    ])
 
 })();
 
@@ -176,6 +187,7 @@ document.addEventListener("deviceready", onAppReady, false) ;
 
   function HomeController(API,$mdToast){
     let vm = this;
+    vm.selectedIndex = 0;
     vm.btnLoginTexto = "Entrar";
     vm.btnCadastroTexto = "Cadastrar";
     vm.btnLogin = 0;
@@ -183,6 +195,18 @@ document.addEventListener("deviceready", onAppReady, false) ;
     vm.logar = logar;
     vm.cadastroUser = cadastroUser;
 
+
+    vm.onSwipeRight = function(){
+      if(vm.selectedIndex == 0){
+        vm.selectedIndex = 1;
+      }
+    }
+    vm.onSwipeLeft = function(){
+      console.log('test');
+      if(vm.selectedIndex == 1){
+        vm.selectedIndex = 0;
+      }
+    }
 
     vm.showSimpleToast = function(msg) {
       $mdToast.show(
@@ -198,18 +222,18 @@ document.addEventListener("deviceready", onAppReady, false) ;
     function logar(dados){
       vm.btnLogin = 1;
       vm.btnLoginTexto = "Entrando";
-      API.post('login',dados).then(result => {              
+      API.post('login',dados).then(result => {  
         console.log(result.data);
         vm.btnLogin = 0;
         vm.btnLoginTexto = "Entrar";
         if(result.data.password != undefined){
           vm.showSimpleToast('Senha de no minimo 6 caracteres');
         }
-        if(result.data.email != undefined){
+        if(Array.isArray(result.data.email)){
           vm.showSimpleToast('E-mail inválido');
         }
         if(!result.data){
-          vm.showSimpleToast('Usuário não encontrado');
+          vm.showSimpleToast('Login ou senha inválidos');
         }
       }).catch(error =>{
         vm.btnLogin = 0;
@@ -217,11 +241,11 @@ document.addEventListener("deviceready", onAppReady, false) ;
         if(error.data.password != undefined){
           vm.showSimpleToast('Senha de no minimo 6 caracteres');
         }
-        if(error.data.email != undefined){
+        if(Array.isArray(error.data.email)){
           vm.showSimpleToast('E-mail inválido');
         }
         if(error.data == ''){
-          vm.showSimpleToast('Usuário não encontrado');
+          vm.showSimpleToast('Login ou senha inválidos');
         }
       });
     }
@@ -248,15 +272,53 @@ document.addEventListener("deviceready", onAppReady, false) ;
 })();
 
 (function(){
+  'use strict';
+
+  angular
+    .module('app.pedido')
+    .controller('PedidoController', PedidoController);
+
+  function PedidoController() {
+    let vm = this;
+		vm.lanchonetes = [1,2,3,4,5,6,7,8,9]
+  }
+
+})();
+
+(function(){
+	'use strict';
+
+  angular
+    .module('app.pedido')
+    .config(routes);
+
+  function routes($stateProvider) {
+  	$stateProvider
+  		.state('listaPedido', {
+        url: '/pedido',
+        templateUrl: 'pedido/layouts/pedido.template.html',
+        controller: 'PedidoController',
+        controllerAs: 'vm',
+        parent: 'main'
+      })
+  }
+
+})();
+
+(function(){
 	'use strict';
 
 	angular
 		.module('app')
 		.controller('MainController', MainController);
 
-		function MainController(){
+		function MainController($state,$rootScope){
 			let vm = this;
-
+			vm.state = $state.current.name;
+			$rootScope.$on('$stateChangeSuccess', 
+			function(event, toState, toParams, fromState, fromParams){ 
+			    vm.state = $state.current.name;
+			})
 		}
 
 })();

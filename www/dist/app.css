@@ -1,3 +1,6 @@
+body {
+  background: #fff; }
+
 .titulo_padrao {
   font-family: roboto;
   font-weight: 600;
@@ -33,6 +36,38 @@
 
 .btn--totalWidth {
   width: 100%; }
+
+.menu__icon {
+  cursor: pointer; }
+  .menu__icon img {
+    width: 65%;
+    padding-top: 10px; }
+
+.login__content__logo--menu {
+  padding: 0px 30px; }
+
+.footer {
+  background: #ff141b;
+  height: 15px;
+  position: absolute;
+  bottom: 0px;
+  width: 100%; }
+
+ul {
+  list-style-type: none;
+  padding: 0px; }
+  ul li {
+    list-style: none !important; }
+
+.back__cover {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; }
+
+.back__contain {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain; }
 
 .login__logo {
   padding: 15px 0px; }
@@ -225,5 +260,45 @@
   font-weight: 700;
   text-transform: uppercase;
   text-align: center; }
+
+.menu__list md-content md-tabs-wrapper {
+  background: #ff141b;
+  border-width: 0px; }
+  .menu__list md-content md-tabs-wrapper md-tabs-canvas {
+    height: 80px;
+    margin: 0px 35px;
+    background: #ff141b; }
+    .menu__list md-content md-tabs-wrapper md-tabs-canvas md-pagination-wrapper {
+      height: 80px;
+      width: 100%; }
+      .menu__list md-content md-tabs-wrapper md-tabs-canvas md-pagination-wrapper md-tab-item {
+        width: 33.33%;
+        max-width: 33.33% !important;
+        min-width: 33.33%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #ff141b; }
+        .menu__list md-content md-tabs-wrapper md-tabs-canvas md-pagination-wrapper md-tab-item img {
+          max-width: 55%; }
+
+.menu__list md-content md-tabs .md-tab.md-active {
+  color: #fff; }
+
+.menu__list md-content md-ink-bar {
+  color: #ff8202;
+  background: #ff8202;
+  height: 6px;
+  margin: 0px 10px; }
+
+.marker {
+  opacity: .7; }
+
+.lanchonete__lista {
+  padding: 0px 35px; }
+  .lanchonete__lista li {
+    padding: 5px; }
+    .lanchonete__lista li .lanchonete__lista__imagem {
+      height: 5em; }
 
 /*# sourceMappingURL=app.css.map */

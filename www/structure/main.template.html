@@ -1,5 +1,21 @@
-<header></header>
+<header>
+	<div ng-if="vm.state == 'listaPedido'">
+		<div layout="row" layout-align="space-between center" class="login__content__logo login__content__logo--menu">
+			<div class="menu__icon">
+		  		<img src="media/hamburger.jpg">		
+			</div>
+			{{$state.current.name}}
+			<div class="login__logo">
+		  		<img src="media/logo_small.png">		
+			</div>
+		</div>
+	</div>
+</header>
 
 <main ui-view></main>
 
-<footer></footer>
+<footer>
+	<div ng-if="vm.state == 'listaPedido'" class="footer">
+		
+	</div>
+</footer>

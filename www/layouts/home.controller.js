@@ -7,6 +7,7 @@
 
   function HomeController(API,$mdToast){
     let vm = this;
+    vm.selectedIndex = 0;
     vm.btnLoginTexto = "Entrar";
     vm.btnCadastroTexto = "Cadastrar";
     vm.btnLogin = 0;
@@ -14,6 +15,18 @@
     vm.logar = logar;
     vm.cadastroUser = cadastroUser;
 
+
+    vm.onSwipeRight = function(){
+      if(vm.selectedIndex == 0){
+        vm.selectedIndex = 1;
+      }
+    }
+    vm.onSwipeLeft = function(){
+      console.log('test');
+      if(vm.selectedIndex == 1){
+        vm.selectedIndex = 0;
+      }
+    }
 
     vm.showSimpleToast = function(msg) {
       $mdToast.show(
@@ -29,18 +42,18 @@
     function logar(dados){
       vm.btnLogin = 1;
       vm.btnLoginTexto = "Entrando";
-      API.post('login',dados).then(result => {              
+      API.post('login',dados).then(result => {  
         console.log(result.data);
         vm.btnLogin = 0;
         vm.btnLoginTexto = "Entrar";
         if(result.data.password != undefined){
           vm.showSimpleToast('Senha de no minimo 6 caracteres');
         }
-        if(result.data.email != undefined){
+        if(Array.isArray(result.data.email)){
           vm.showSimpleToast('E-mail inválido');
         }
         if(!result.data){
-          vm.showSimpleToast('Usuário não encontrado');
+          vm.showSimpleToast('Login ou senha inválidos');
         }
       }).catch(error =>{
         vm.btnLogin = 0;
@@ -48,11 +61,11 @@
         if(error.data.password != undefined){
           vm.showSimpleToast('Senha de no minimo 6 caracteres');
         }
-        if(error.data.email != undefined){
+        if(Array.isArray(error.data.email)){
           vm.showSimpleToast('E-mail inválido');
         }
         if(error.data == ''){
-          vm.showSimpleToast('Usuário não encontrado');
+          vm.showSimpleToast('Login ou senha inválidos');
         }
       });
     }

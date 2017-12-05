@@ -1,3 +1,6 @@
+body{
+	background: #fff;
+}
 .titulo_padrao{
 	font-family: roboto;
 	font-weight: 600;
@@ -35,4 +38,38 @@
 }
 .btn--totalWidth{
 	width: 100%;
+}
+.menu__icon{
+	cursor: pointer;
+	img{
+		width: 65%;	
+		padding-top: 10px;	
+	}
+}
+.login__content__logo--menu{
+	padding: 0px 30px;
+}
+.footer{
+	background: $secondary-color;
+	height: 15px;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+ul{
+	list-style-type: none; 
+	padding: 0px;
+	li{
+		list-style: none!important;
+	}
+}
+.back__cover{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.back__contain{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
