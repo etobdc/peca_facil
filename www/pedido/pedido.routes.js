@@ -14,6 +14,13 @@
         controllerAs: 'vm',
         parent: 'main'
       })
+      .state('showPedidoLocal', {
+        url: '/pedido/local/:slug',
+        templateUrl: 'pedido/layouts/pedidoLocal.template.html',
+        controller: 'PedidoLocalController',
+        controllerAs: 'vm',
+        parent: 'main'
+      })
   }
 
 })();

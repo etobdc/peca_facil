@@ -1,12 +1,14 @@
 <header>
-	<div ng-if="vm.state == 'listaPedido'">
+	<div ng-if="vm.state != 'home'">
 		<div layout="row" layout-align="space-between center" class="login__content__logo login__content__logo--menu">
-			<div class="menu__icon">
-		  		<img src="media/hamburger.jpg">		
+			<div class="menu__icon">				
+	  			<img src="media/hamburger.jpg">
 			</div>
 			{{$state.current.name}}
 			<div class="login__logo">
-		  		<img src="media/logo_small.png">		
+				<a ui-sref="listaPedido">
+		  			<img src="media/logo_small.png">	
+		  		</a>	
 			</div>
 		</div>
 	</div>

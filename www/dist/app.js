@@ -280,7 +280,113 @@ document.addEventListener("deviceready", onAppReady, false) ;
 
   function PedidoController() {
     let vm = this;
-		vm.lanchonetes = [1,2,3,4,5,6,7,8,9]
+	vm.lanchonetes = [
+		{
+			"nome":"koba",
+			"slug": "koba",
+			"imagem":"koba.png"
+		},
+		{
+			"nome":"ciro",
+			"slug": "ciro",
+			"imagem":"ciro.png"
+		},
+		{
+			"nome":"galpao",
+			"slug": "galpao",
+			"imagem":"galpao.png"
+		},
+		{
+			"nome":"vegas",
+			"slug": "vegas",
+			"imagem":"vegas.png"
+		},
+		{
+			"nome":"koba",
+			"slug": "koba",
+			"imagem":"koba.png"
+		},
+		{
+			"nome":"ciro",
+			"slug": "ciro",
+			"imagem":"ciro.png"
+		},
+		{
+			"nome":"galpao",
+			"slug": "galpao",
+			"imagem":"galpao.png"
+		},
+		{
+			"nome":"vegas",
+			"slug": "vegas",
+			"imagem":"vegas.png"
+		},
+		{
+			"nome":"koba",
+			"slug": "koba",
+			"imagem":"koba.png"
+		},
+		{
+			"nome":"ciro",
+			"slug": "ciro",
+			"imagem":"ciro.png"
+		},
+		{
+			"nome":"galpao",
+			"slug": "galpao",
+			"imagem":"galpao.png"
+		},
+		{
+			"nome":"vegas",
+			"slug": "vegas",
+			"imagem":"vegas.png"
+		}
+	]
+  }
+
+})();
+
+(function(){
+  'use strict';
+
+  angular
+    .module('app.pedido')
+    .controller('PedidoLocalController', PedidoLocalController);
+
+  function PedidoLocalController($state) {
+    let vm = this;
+    let slug = $state.params.slug;
+    vm.lanchonetes = [
+		{
+			"nome":"koba",
+			"slug": "koba",
+			"imagem":"koba.png"
+		},
+		{
+			"nome":"ciro",
+			"slug": "ciro",
+			"imagem":"ciro.png"
+		},
+		{
+			"nome":"galpao",
+			"slug": "galpao",
+			"imagem":"galpao.png"
+		},
+		{
+			"nome":"vegas",
+			"slug": "vegas",
+			"imagem":"vegas.png"
+		}
+	]
+
+	vm.search = function(){
+		for (var i = 0; i < vm.lanchonetes.length; i++) {
+			if(vm.lanchonetes[i].slug == slug){
+				vm.lanchonete = vm.lanchonetes[i];
+			}
+		}
+	}
+	vm.search();
   }
 
 })();
@@ -298,6 +404,13 @@ document.addEventListener("deviceready", onAppReady, false) ;
         url: '/pedido',
         templateUrl: 'pedido/layouts/pedido.template.html',
         controller: 'PedidoController',
+        controllerAs: 'vm',
+        parent: 'main'
+      })
+      .state('showPedidoLocal', {
+        url: '/pedido/local/:slug',
+        templateUrl: 'pedido/layouts/pedidoLocal.template.html',
+        controller: 'PedidoLocalController',
         controllerAs: 'vm',
         parent: 'main'
       })

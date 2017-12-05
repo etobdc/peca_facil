@@ -1,0 +1,24 @@
+<div class="menu__list menu__list--pedidoLocal" ng-cloak>
+  <md-content>
+    <md-tabs md-dynamic-height md-border-bottom>
+      <md-tab>
+		<md-tab-label>
+			<img src="media/marker.png" class="marker">
+			{{vm.lanchonete.nome}}
+		</md-tab-label>
+        <md-tab-body>
+        	<h1 class="titulo_padrao titulo_padrao--uppercase text-center">Meu Pedido</h1>
+	        <ul layout="row" layout-wrap class="lanchonete__lista">
+	            <li flex="100" ng-repeat="lanchonete in vm.lanchonetes">
+	                <div class="lanchonete__lista__item">
+	                  <div class="back__contain lanchonete__lista__imagem" style="background-image: url('media/{{lanchonete.imagem}}');">
+	                  </div>
+	                  <h2>R$ 10,00</h2>
+	                </div>
+	            </li>
+	        </ul>
+        </md-tab-body>
+      </md-tab>
+    </md-tabs>
+  </md-content>
+</div>
