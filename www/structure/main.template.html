@@ -17,7 +17,7 @@
 <main ui-view></main>
 
 <footer>
-	<div ng-if="vm.state == 'listaPedido'" class="footer">
+	<div ng-if="vm.state != 'home'" class="footer" ng-class="{'footer_pedidos': vm.state != 'home'}">
 		
 	</div>
 </footer>

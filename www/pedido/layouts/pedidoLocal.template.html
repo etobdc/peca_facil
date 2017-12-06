@@ -8,15 +8,31 @@
 		</md-tab-label>
         <md-tab-body>
         	<h1 class="titulo_padrao titulo_padrao--uppercase text-center">Meu Pedido</h1>
-	        <ul layout="row" layout-wrap class="lanchonete__lista">
-	            <li flex="100" ng-repeat="lanchonete in vm.lanchonetes">
-	                <div class="lanchonete__lista__item">
-	                  <div class="back__contain lanchonete__lista__imagem" style="background-image: url('media/{{lanchonete.imagem}}');">
+	        <ul layout="row" layout-wrap class="lanchonete__lista lanchonete__lista--ajuste">
+	            <li flex="100" ng-repeat="lanche in vm.lanches">
+	                <div class="lanchonete__lista__item lanchonete__lista__item--ajuste" layout="row" layout-align="space-between center">
+	                  <div flex="35" class="back__contain lanchonete__lista__imagem" style="background-image: url('media/{{lanche.imagem}}');">
 	                  </div>
-	                  <h2>R$ 10,00</h2>
+	                  <div class="text-center" flex="65">
+	                  	<h2 class="titulo_padrao titulo_padrao--primary lanchonete__lista__item__nome">{{lanche.nome}}</h2>
+	                  	<h3>R$ {{lanche.valor}}</h3>
+	                  </div>
 	                </div>
 	            </li>
 	        </ul>
+	        <div flex="100" layout-align="center center">
+	        	<div flex="100" layout-align="center center" class="lanchonete__total">
+		        	<h4 class="titulo_padrao titulo_padrao--primary titulo_padrao--uppercase">Total</h4>
+		        	<hr>
+		        	<h5 class="titulo_padrao">R$ 50,00</h5>	        		
+	        	</div>
+	        	<div flex="100" layout-align="center center" class="lanchonete__total">
+		        	<md-button ng-disabled="vm.btnCadastro" class="md-raised btn--cta btn--totalWidth login__content__form__btn" type="submit">
+						Finalizar pedido
+						<img src="media/loadDots.svg" ng-show="vm.btnCadastro">
+					</md-button>       		
+	        	</div>	        	
+	        </div>
         </md-tab-body>
       </md-tab>
     </md-tabs>
